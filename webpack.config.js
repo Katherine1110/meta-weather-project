@@ -52,6 +52,19 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
+      // HTML
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: { minimize: true },
+          },
+          {
+            loader: 'posthtml-loader',
+          },
+        ],
+      },
     ],
   },
 };
